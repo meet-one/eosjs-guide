@@ -1,7 +1,8 @@
 # eosjs-guide
 Step-by-step guide to learning eosjs for integration with EOSIO-based blockchains.
 
-### return general network information
+return general network information
+
 ```
 eos.getInfo((error, result) => {
   console.log(error, result)
