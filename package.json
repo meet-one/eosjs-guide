@@ -1,0 +1,22 @@
+{
+  "name": "eosjs-guide",
+  "version": "1.0.0",
+  "description": "Step-by-step guide to learning eosjs for integration with EOSIO-based blockchains.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/meet-one/eosjs-guide.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/meet-one/eosjs-guide/issues"
+  },
+  "homepage": "https://github.com/meet-one/eosjs-guide#readme",
+  "dependencies": {
+    "eosjs": "^16.0.9"
+  }
+}
