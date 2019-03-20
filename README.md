@@ -1,7 +1,9 @@
 ## eosjs-guide
 Step-by-step guide to learning eosjs API for integration with EOSIO-based blockchains.
 
-[source code](index.js)
+[Sourcecode of Guide](index.js)
+
+[History API Documentation](https://documenter.getpostman.com/view/3895747/S11Ey1cw)
 
 ### Install
 
@@ -223,6 +225,3 @@ eos.getTableRows({
   console.log(error, result);
 });
 ```
-
-
-[History API Documentation](https://documenter.getpostman.com/view/3895747/S11Ey1cw)
