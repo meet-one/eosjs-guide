@@ -1,5 +1,5 @@
 # eosjs-guide
-Step-by-step guide to learning eosjs for integration with EOSIO-based blockchains.
+eosjs API example for integration with EOSIO-based blockchains.
 
 ## Basic Usage
 
