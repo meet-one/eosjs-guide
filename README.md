@@ -1,9 +1,32 @@
-# eosjs-guide
-eosjs API example for integration with EOSIO-based blockchains.
+## eosjs-guide
+Step-by-step guide to learning eosjs API for integration with EOSIO-based blockchains.
 
 [source code](index.js)
 
-## Basic Usage
+### Install
+
+```
+npm install eosjs
+```
+
+### Basic config
+```
+var Eos = require('eosjs');
+
+// Default configuration
+var config = {
+  chainId: 'cfe6486a83bad4962f232d48003b1824ab5665c36778141034d75e57b956e422', // 32 byte (64 char) hex string
+  keyProvider: '',
+  httpEndpoint: 'https://fullnode.meet.one',
+  expireInSeconds: 60,
+  broadcast: true,
+  verbose: false, // API activity
+  sign: true
+};
+var eos = Eos(config);
+```
+
+### Basic Usage
 
 return general network information
 
@@ -58,7 +81,7 @@ eos.getBlockHeaderState("3833592", (error, result) => {
 smart contract data from an account.
 ```
 eos.getTableRows({
-  'json': true, default = false
+  'json': true, // default = false
   'code': 'eosio',
   'scope': 'eosio',
   'table': 'voters',
@@ -133,5 +156,70 @@ eos.getActions({
   'offset': '20' // The number of actions relative to pos, negative numbers return [pos-offset,pos), positive numbers return [pos,pos+offset)
 }, (error, result) => {
   console.log(error, result)
+});
+```
+
+
+return rammarket data and RAM price
+```
+eos.getTableRows({
+  'json': true,
+  'code': 'eosio',
+  'scope': 'eosio',
+  'table': 'rammarket',
+}, (error, result) => {
+  console.log(error, result);
+  var data = result.rows[0];
+  var quoteBalance = data.quote.balance.split(' ')[0];
+  var baseBalance = data.base.balance.split(' ')[0];
+  console.log('current RAM price of per KB: ' + quoteBalance / baseBalance * 1024);
+});
+```
+
+return CPU/NET price
+```
+eos.getAccount('meetone.m', (error, result) => {
+  console.log(error, result);
+
+  var netWeight = result.total_resources.net_weight.split(' ')[0];
+  var netLimit = result.net_limit.max;
+  console.log('current price of NET (EOS/KB/Day): ' + netWeight / (netLimit / 1024) / 3);
+
+  var cpuWeight = result.total_resources.cpu_weight.split(' ')[0];
+  var cpuLimit = result.cpu_limit.max;
+  console.log('current price of CPU (EOS/KB/Day): ' + cpuWeight / (cpuLimit / 1000) / 3);
+});
+```
+
+return block producer info
+```
+eos.getTableRows({
+  'json': true,
+  'code': 'eosio',
+  'scope': 'eosio',
+  'table': 'producers',
+  'lower_bound': 'meetone.m',
+  'limit': 1
+}, (error, result) => {
+  console.log(error, result);
+
+  // convert vote_weight to token amount
+  // staked = voteWeight / Math.pow(2, seconds_since_year_2000 / seconds_per_year ) / 10000
+
+  var voteWeight = result.rows[0].total_votes;
+  var staked = voteWeight / Math.pow(2, ((new Date()).getTime() - 946684800000) / 1000 / (52 * 7 * 24 * 3600)) / 10000;
+  console.log(staked);
+});
+```
+
+return blockchain global data
+```
+eos.getTableRows({
+  'json': true,
+  'code': 'eosio',
+  'scope': 'eosio',
+  'table': 'global'
+}, (error, result) => {
+  console.log(error, result);
 });
 ```
