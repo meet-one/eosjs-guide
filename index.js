@@ -1,11 +1,9 @@
-Eos = require('eosjs');
-
-// {"msg": "succeeded", "keys": {"active_key": {"public": "EOS6MrMuwWT7oGMcy2C6YbdvBoCDb4QB9H5VBB5zJRtx7vUrXtwSe", "private": "5HscDoZQDCwmpLP4cYoRHigQAQwkk2cHiobT6eg23Tt25kmJ6Wg"}, "owner_key": {"public": "EOS5rbHvAEeSqZV9ePTfU342sKy8vd7EqdYC2tSUvpYgzb987JZGH", "private": "5JHjJjCJFb72cKGogVb7mGYrwh1QJu168aQXtPzddn1zF5CL7rE"}}, "account": "toeosjsguide"}
+var Eos = require('eosjs');
 
 // Default configuration
 var config = {
-  chainId: null, // 32 byte (64 char) hex string
-  keyProvider: '', //only key and should never be used for the production blockchain.
+  chainId: 'cfe6486a83bad4962f232d48003b1824ab5665c36778141034d75e57b956e422', // 32 byte (64 char) hex string
+  keyProvider: '',
   httpEndpoint: 'https://fullnode.meet.one',
   expireInSeconds: 60,
   broadcast: true,
