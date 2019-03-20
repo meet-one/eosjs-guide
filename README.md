@@ -223,3 +223,6 @@ eos.getTableRows({
   console.log(error, result);
 });
 ```
+
+
+[History API Documentation](https://documenter.getpostman.com/view/3895747/S11Ey1cw)
