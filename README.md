@@ -248,7 +248,6 @@ eos.transaction(tr => {
   });
 }).then(function (result) {
   console.log(result);
-  // https://meetone-test.eosx.io/account/eosjsguide.m
 }).catch(function (error) {
   if (error) {
     console.log(JSON.parse(error));
