@@ -161,7 +161,6 @@ eos.getActions({
 });
 ```
 
-
 return rammarket data and RAM price
 ```
 eos.getTableRows({
@@ -223,5 +222,36 @@ eos.getTableRows({
   'table': 'global'
 }, (error, result) => {
   console.log(error, result);
+});
+```
+
+create new account [source code](createNewAccount.js)
+```
+eos.transaction(tr => {
+  tr.newaccount({
+    creator: payer,
+    name: newAccountName,
+    owner: publicKey,
+    active: publicKey
+  });
+  tr.buyrambytes({
+    payer: payer,
+    receiver: newAccountName,
+    bytes: 1024 * 3
+  });
+  tr.delegatebw({
+    from: payer,
+    receiver: newAccountName,
+    stake_net_quantity: '1.0000 MEETONE',
+    stake_cpu_quantity: '1.0000 MEETONE',
+    transfer: 0
+  });
+}).then(function (result) {
+  console.log(result);
+  // https://meetone-test.eosx.io/account/eosjsguide.m
+}).catch(function (error) {
+  if (error) {
+    console.log(JSON.parse(error));
+  }
 });
 ```
