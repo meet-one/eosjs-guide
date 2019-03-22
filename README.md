@@ -254,3 +254,36 @@ eos.transaction(tr => {
   }
 });
 ```
+
+Tables of system contract eosio
+
+```
+// record of each voter
+voters
+
+// record of each producer
+producers
+
+// votepay_share record of each producer
+producers2
+
+// info of system rammarket
+rammarket
+
+// record of each account
+// cleos -u http://fullnode.meet.one get table eosio meetone.m userres -l 1
+userres
+
+// record of each account's delegate bandwith
+// cleos -u http://fullnode.meet.one get table eosio meetone.m delband -l 1
+delband
+
+// record of each account's refunding token amount
+refunds
+
+// record of each namebids
+namebids
+
+// record of each refunding namebids
+bidrefunds
+```
