@@ -294,3 +294,5 @@ namebids
 // MEETONE sidechain doesn't support bid name
 bidrefunds
 ```
+
+[Click me if you would like to see how to send action to custom contract](articles.js)
