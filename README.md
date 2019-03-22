@@ -259,15 +259,19 @@ Tables of system contract eosio
 
 ```
 // record of each voter
+// cleos -u http://fullnode.meet.one get table eosio eosio voters
 voters
 
 // record of each producer
+// cleos -u http://fullnode.meet.one get table eosio eosio producers
 producers
 
 // votepay_share record of each producer
+// cleos -u http://fullnode.meet.one get table eosio eosio producers2
 producers2
 
 // info of system rammarket
+// cleos -u http://fullnode.meet.one get table eosio eosio rammarket -l 1
 rammarket
 
 // record of each account
@@ -279,11 +283,14 @@ userres
 delband
 
 // record of each account's refunding token amount
+// cleos -u http://fullnode.meet.one get table eosio m refunds -l 1
 refunds
 
 // record of each namebids
+// MEETONE sidechain doesn't support bid name
 namebids
 
 // record of each refunding namebids
+// MEETONE sidechain doesn't support bid name
 bidrefunds
 ```
