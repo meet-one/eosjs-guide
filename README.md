@@ -5,6 +5,8 @@ Step-by-step guide to learning eosjs API for integration with MEETONE sidechain.
 
 [History API Documentation](https://documenter.getpostman.com/view/3895747/S11Ey1cw)
 
+[Click me if you would like to see how to send action to custom contract](articles.js)
+
 ### Install
 
 ```
@@ -294,5 +296,3 @@ namebids
 // MEETONE sidechain doesn't support bid name
 bidrefunds
 ```
-
-[Click me if you would like to see how to send action to custom contract](articles.js)
