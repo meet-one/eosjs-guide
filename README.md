@@ -1,5 +1,5 @@
 ## eosjs-guide
-Step-by-step guide to learning eosjs API for integration with EOSIO-based blockchains.(EOS,BOS,MEETONE)
+Step-by-step guide to learning eosjs API for integration with EOSIO-based blockchains. (EOS, MEETONE, BOS)
 
 [Sourcecode of Guide](index.js)
 
