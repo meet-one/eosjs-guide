@@ -10,7 +10,7 @@ Step-by-step guide to learning eosjs API for integration with EOSIO-based blockc
 ### Install
 
 ```
-npm install eosjs
+npm install eosjs@16.0.9
 ```
 
 ### Basic config
