@@ -171,7 +171,7 @@ eos.getTableRows({
   // staked = voteWeight / Math.pow(2, seconds_since_year_2000 / seconds_per_year ) / 10000
 
   var voteWeight = result.rows[0].total_votes;
-  var staked = voteWeight / Math.pow(2, ((new Date()).getTime() - 946684800000) / 1000 / (52 * 7 * 24 * 3600)) / 10000;
+  var staked = voteWeight / Math.pow(2, Math.floor(((new Date()).getTime() - 946684800000) / 1000 / (86400 * 7 )) / 52) / 10000;
   console.log(staked);
 });
 
