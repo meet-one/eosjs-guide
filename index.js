@@ -1,4 +1,5 @@
-var Eos = require('eosjs');
+var EOS = require('eosjs');
+var ecc = require('eosjs-ecc');
 
 // Default configuration
 var config = {
@@ -11,7 +12,14 @@ var config = {
   sign: true
 };
 
-var eos = Eos(config);
+var eos = EOS(config);
+
+// generate new key pair
+
+ecc.randomKey().then(privateKey => {
+  console.log('Private Key:\t', privateKey);
+  console.log('Public Key:\t', ecc.privateToPublic(privateKey));
+});
 
 // return general network information
 eos.getInfo((error, result) => {

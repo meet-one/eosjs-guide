@@ -34,7 +34,16 @@ var eos = Eos(config);
 
 ### Basic Usage
 
-return general network information
+Generate new key pair 
+
+```
+ecc.randomKey().then(privateKey => {
+  console.log('Private Key:\t', privateKey);
+  console.log('Public Key:\t', ecc.privateToPublic(privateKey));
+});
+```
+
+Return general network information
 
 ```
 eos.getInfo((error, result) => {
@@ -42,42 +51,42 @@ eos.getInfo((error, result) => {
 });
 ```
 
-return a blockchain account
+Return a blockchain account
 ```
 eos.getAccount('eosio', (error, result) => {
   console.log(error, result)
 });
 ```
 
-return smart contract code hash
+Return smart contract code hash
 ```
 eos.getCodeHash('eosio', (error, result) => {
   console.log(error, result)
 });
 ```
 
-return smart contract abi
+Return smart contract abi
 ```
 eos.getAbi('eosio', (error, result) => {
   console.log(error, result)
 });
 ```
 
-return smart contract raw of code and abi
+Return smart contract raw of code and abi
 ```
 eos.getRawCodeAndAbi('eosio', (error, result) => {
   console.log(error, result)
 });
 ```
 
-return a block from the blockchain.
+Return a block from the blockchain.
 ```
 eos.getBlock("3833592", (error, result) => {
   console.log(error, result)
 });
 ```
 
-return the minimum state necessary to validate transaction headers.
+Return the minimum state necessary to validate transaction headers.
 ```
 eos.getBlockHeaderState("3833592", (error, result) => {
   console.log(error, result)
@@ -101,21 +110,21 @@ eos.getTableRows({
 });
 ```
 
-return currency balance
+Return currency balance
 ```
 eos.getCurrencyBalance('eosio.token', 'eosio', 'MEETONE', (error, result) => {
   console.log(error, result)
 });
 ```
 
-return currency stats
+Return currency stats
 ```
 eos.getCurrencyStats('eosio.token', 'MEETONE', (error, result) => {
   console.log(error, result)
 });
 ```
 
-return producers list from system contract
+Return producers list from system contract
 ```
 eos.getProducers({
   'json': true,
@@ -126,35 +135,35 @@ eos.getProducers({
 });
 ```
 
-return currently producer schedule
+Return currently producer schedule
 ```
 eos.getProducerSchedule((error, result) => {
   console.log(error, result)
 });
 ```
 
-return transaction info
+Return transaction info
 ```
 eos.getTransaction('98ff999d1395553ba9f3eb8acf59206aece4676b406cd6389911b42378c4ccdb', (error, result) => {
   console.log(error, result)
 });
 ```
 
-return key accounts
+Return key accounts
 ```
 eos.getKeyAccounts('EOS6ZtMCx7eCkNxkRcizJm7J5Fr13YKtaBEx6PtETnh1ihoHRZvWU', (error, result) => {
   console.log(error, result)
 });
 ```
 
-return accounts controlled by eosio.prods
+Return accounts controlled by eosio.prods
 ```
 eos.getControlledAccounts('eosio.prods', (error, result) => {
   console.log(error, result)
 });
 ```
 
-return account actions
+Return account actions
 ```
 eos.getActions({
   'account_name': 'meetone.m',
@@ -165,7 +174,7 @@ eos.getActions({
 });
 ```
 
-return rammarket data and RAM price
+Return rammarket data and RAM price
 ```
 eos.getTableRows({
   'json': true,
@@ -181,7 +190,7 @@ eos.getTableRows({
 });
 ```
 
-return CPU/NET price
+Return CPU/NET price
 ```
 eos.getAccount('meetone.m', (error, result) => {
   console.log(error, result);
@@ -196,7 +205,7 @@ eos.getAccount('meetone.m', (error, result) => {
 });
 ```
 
-return block producer info
+Return block producer info
 ```
 eos.getTableRows({
   'json': true,
@@ -218,7 +227,7 @@ eos.getTableRows({
 });
 ```
 
-return blockchain global data
+Return blockchain global data
 ```
 eos.getTableRows({
   'json': true,
@@ -230,7 +239,7 @@ eos.getTableRows({
 });
 ```
 
-create new account [source code](createNewAccount.js)
+Create new account [source code](createNewAccount.js)
 ```
 eos.transaction(tr => {
   tr.newaccount({
