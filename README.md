@@ -5,7 +5,7 @@ Step-by-step guide to learning eosjs API for integration with EOSIO-based blockc
 
 [History API Documentation](https://documenter.getpostman.com/view/3895747/S11Ey1cw)
 
-[Click me if you would like to know how to send action to custom contract](articles.js)
+[Click me if you would like to know how to push action to custom contract](articles.js)
 
 [Private Key to Public Key](https://github.com/meet-one/private-to-public)
 
