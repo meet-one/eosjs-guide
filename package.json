@@ -17,6 +17,6 @@
   },
   "homepage": "https://github.com/meet-one/eosjs-guide#readme",
   "dependencies": {
-    "eosjs": "^16.0.9"
+    "eosjs": "^22.1.0"
   }
 }
